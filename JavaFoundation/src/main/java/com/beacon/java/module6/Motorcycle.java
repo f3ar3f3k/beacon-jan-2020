@@ -10,7 +10,7 @@ public class Motorcycle extends Bicycle {
 	
 	public static void main(String[] args) {
 		Motorcycle mc = new Motorcycle(3, 100);
-		
+		// access a protected method
 		mc.wheels = 2;
 	}
 
