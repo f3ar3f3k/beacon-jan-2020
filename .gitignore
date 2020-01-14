@@ -2,6 +2,12 @@
 /JavaFoundation/.settings/
 /JavaFoundation/.classpath
 
-/UnitTestingn/target/
+/UnitTesting/target/
 /UnitTesting/.settings/
 /UnitTesting/.classpath
+
+/beacon-webapp/target/
+/beacon-webapp/build/
+/beacon-webapp/.settings/
+/beacon-webapp/.classpath
+/beacon-webapp/.project
