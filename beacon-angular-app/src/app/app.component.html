@@ -1,0 +1,17 @@
+<h1>Lifecycle hooks</h1>
+
+<button (click)="onShow()">Show Component</button>
+<button (click)="onHide()">Hide Component</button>
+
+<app-lifecyclehook *ngIf="isActive"></app-lifecyclehook>
+
+<hr>
+<h1>Component Interactions</h1>
+<app-parent></app-parent>
+
+<hr>
+
+<app-start></app-start>
+
+<!-- <h1 class="app-start"></h1> -->
+<!-- <h1 app-start"></h1> -->
