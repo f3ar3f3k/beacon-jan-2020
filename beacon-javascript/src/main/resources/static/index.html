@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Form Validation</h1>
+	
+	<h2>Constraint validation</h2>
+	<input id="constraint" type="number" min="100" max="300" required/>
+	<button onclick ="validateNumber()">Validate number</button>
+	<p id="message"></p>
+	
+	<form name="myForm" action="/action_page.php"
+		onsubmit="return validateForm()">
+		<input type="text" name="fname" /> 
+		<input type="submit" value="Validate" />
+	</form>
+
+	<script>
+	const validateNumber = ()=>{
+	
+		let inpObj = document.getElementById("constraint");
+		if(inpObj.checkValidity()){
+			alert("Input Ok");
+		}else{
+			
+			document.getElementById("message").innerHTML = 
+				inpObj.validationMessage;
+		}
+		
+	};
+	
+	
+	const validateForm = ()=>{
+		debugger;
+		
+		let x = document.forms["myForm"]["fname"].value;
+		
+		console.log("=====>" + x);
+		if( x == "" ){
+			alert("Name must be filled out..");
+		}else{
+			alert("The name value: " + x);
+		}
+		
+		return false;
+	};
+	</script>
+
+	<hr>
+	<h1>Built-in Objects</h1>
+
+	<button onclick="spiceItUp()">Spice it up</button>
+	<p id="spice">Here's some text. It's very boring. But something
+		tells me we're going to spice it up!</p>
+
+	<input type="button" onclick="goToGoogle()" value="Go to Google site" />
+
+	<script>
+	//location object
+	const goToGoogle = ()=>{
+		window.location.href= "http://google.com"
+	};
+	
+   const spiceItUp =()=>{
+	  let paragraphElement =  document.getElementById("spice");
+	  paragraphElement.style.background = "yellow";
+	  paragraphElement.style.fontSize = "24px";
+	  paragraphElement.style.color="red";
+   };
+   </script>
+
+	<hr>
+	<h1>Event Handlers</h1>
+	<button onclick="document.getElementById('event').innerHTML=Date()">The
+		time is ?</button>
+	<h2 id="event"></h2>
+	<hr>
+
+	<h1>Functions</h1>
+	<h2 id="function">lkffdkjdkfd</h2>
+
+	<script>
+	  //function with return value
+		const myFunction = (p1, p2)=>{
+		 return p1 * p2;
+		};
+		
+		document.getElementById("function").innerHTML = myFunction(4,3);
+	</script>
+
+	<hr>
+	<h1>Array Operations</h1>
+	<script>
+	
+	const fruits = ["apple", "mango", "banana"];
+	const fruitsalad = ["peach", ...fruits, "orange" ];
+	console.log("--->" + fruitsalad);
+	
+	if(fruitsalad.includes("mango")){
+		console.log("fruit salad contains mango");
+	}
+	
+	//iterating arrays
+	fruitsalad.map((fruit, i)=>{
+		console.log("index "+ i+ ":" + fruit);
+	});
+	
+	
+	</script>
+
+	<hr>
+	<h1>Javascript variable</h1>
+	<script>
+		let no = 6;
+		no = "six";
+		console.log("--->" + no);
+		const str = "hello string";
+		console.log("--->" + str);
+
+		//array
+		const arr = [ "Saab", "Volvo", "BMW" ];
+		//object
+		const obj = {
+			firstName : "John",
+			lastName : "Doe",
+			age : 50
+		};
+
+		console.log("array -->" + arr);
+		console.log("object -->" + JSON.stringify(obj));
+	</script>
+
+
+	<hr>
+	<h1 id="demo">the quick brown fox !!!</h1>
+	<script type="text/javascript" src="hello.js">
+		
+	</script>
+</body>
+</html>
